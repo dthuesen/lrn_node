@@ -1,0 +1,22 @@
+<html>
+</html>
+  <head>
+    <title><%= title %></title> 
+  </head>
+  <body>
+    <div class="header">
+      <% include ../partials/header %>
+    </div>
+    <div class="content">
+      <h1><%= tagline %></h1>
+        <ul>
+          <% for(let i=1; i<6; i++) { %>
+          <li><%= i + '. Item ' + i %></li>
+          <% } %>
+        </ul>
+      
+    </div>
+    <div class="footer">
+      <% include ../partials/footer %>
+    </div>
+  </body>
