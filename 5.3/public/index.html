@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Test AJAX Calls</title>
+    <script src="assets/js/jquery-1.12.4.js"></script>
+  </head>
+  <body>
+    <button id="getButton"  onclick="get()"  >GET</button>
+    <button id="postButton" onclick="post()" >POST</button>
+    <button id="putButton"  onclick="put()"  >PUT</button>
+    <button id="delButton"  onclick="del()"  >DELETE</button>
+    
+    <div>
+      <pre id="getResponse" ></pre>
+      <pre id="postResponse" ></pre>
+      <pre id="putResponse" ></pre>
+      <pre id="delResponse" ></pre>
+    </div>
+    
+    <table class="table">
+      <thead>
+        <tr>
+          <td>#</td>
+          <td>First Name</td>
+          <td>Last Name</td>
+          <td>Email</td>
+          <td>Phone</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+            <td id="dataContactId" scope="row">1</td>
+            <td id="dataFirstName">John</td>
+            <td id="dataLastName">Doe</td>
+            <td id="dataEmail">john.doe@domain.com</td>
+            <td id="dataPhone">897654</td>
+        </tr>
+      </tbody>
+    </table>
+    
+    
+    <script>
+      function get() {
+        $.ajax({
+          type: 'GET',
+          url: 'http://localhost:8000/v1/contact/1',
+          datatype: 'json'
+        })
+        .done( (data) => {
+          console.log('GET response: ', JSON.stringify(data, "", 2));
+          $('#getResponse').html(JSON.stringify(data, "", 2));
+          
+          $('#dataContactId').html(data.contactId);
+          $('#dataFirstName').html(data.firstName);
+          $('#dataLastName').html(data.lastName);
+          $('#dataEmail').html(data.email);
+          $('#dataPhone').html(data.phone);
+        })
+        .fail( (jqXHR, textStatus, err) => {
+          console.log('AJAX error response in GET method: ', textStatus);
+        });
+      }
+      
+      function post() {
+        $.ajax({
+          type: 'POST',
+          url: 'http://localhost:8000/v1/contact',
+          crossDomain: true,
+          contentType: 'application/json; charset=utf',
+          datatype: 'json',
+          data: JSON.stringify({
+            'contactId': 2,
+            'firstName': 'Taylor',
+            'lastName': 'Swift',
+            'email': 'taylor.swift@domain.com',
+            'phone': '111222'
+          })
+        })
+        .done( (data) => {
+          console.log('POST response: ', JSON.stringify(data, null, 4));
+          console.log('POST response: ', JSON.stringify(data, null, 4));
+          $('#postResponse').html(JSON.stringify(data, null, 4));
+          
+          $('#dataContactId').html(data.contactId);
+          $('#dataFirstName').html(data.firstName);
+          $('#dataLastName').html(data.lastName);
+          $('#dataEmail').html(data.email);
+          $('#dataPhone').html(data.phone);
+        })
+        .fail( (jqXHR, textStatus, err) => {
+          console.log('AJAX error response in POST method: ', textStatus);
+        });
+      }
+      
+      function put() {
+        $.ajax({
+          type: 'PUT',
+          url: 'http://localhost:8000/v1/contact/2',
+          crossDomain: true,
+          contentType: 'application/json; charset=utf',
+          datatype: 'json',
+          data: JSON.stringify({
+            contactId: 2,
+            firstName: 'Taylor',
+            lastName: 'Swift',
+            email: 'taylor.swift@domain.com',
+            phone: '12345678909876'
+          })
+        })
+        .done( (data) => {
+          console.log('PUT response: ', JSON.stringify(data, "", 2));
+          $('#putResponse').html(JSON.stringify(data, "", 2));
+          
+          $('#dataContactId').html(data.contactId);
+          $('#dataFirstName').html(data.firstName);
+          $('#dataLastName').html(data.lastName);
+          $('#dataEmail').html(data.email);
+          $('#dataPhone').html(data.phone);
+        })
+        .fail( (jqXHR, textStatus, err) => {
+          console.log('AJAX error response in PUT method: ', textStatus);
+        });
+      }
+      
+      function del() {
+        $.ajax({
+          type: 'DELETE',
+          url: 'http://localhost:8000/v1/contact/2',
+          datatype: 'json'
+        })
+        .done( (data) => {
+          console.log('DELETE response: ', JSON.stringify(data, "", 2));
+          $('#delResponse').html(JSON.stringify(data, "", 2));
+        })
+        .fail( (jqXHR, textStatus, err) => {
+          console.log('AJAX error response in DEL method: ', textStatus);
+        });
+      }
+      
+    </script>
+  </body>
+</html>
+
