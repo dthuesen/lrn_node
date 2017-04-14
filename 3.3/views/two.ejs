@@ -1,0 +1,15 @@
+<html>
+</html>
+  <head>
+    <title><%= title %></title> 
+  </head>
+  <body>
+    <h1><%= message %></h1> 
+    <div class="important-message" id="message-container">
+      <ul>
+        <% for(var i=1; i<6; i++) { %>
+          <li><%= i + ". Item " + i %></li>   
+        <% } %>
+      </ul>
+    </div>
+  </body>
