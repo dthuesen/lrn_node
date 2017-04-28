@@ -1,0 +1,13 @@
+create database packtdb;
+
+use packtdb;
+
+create table contact_person (
+ contactId int(11) auto_increment primary key,
+ firstName varchar(50),
+ lastName varchar(50),
+ email varchar(100),
+ phone varchar(20),
+ imagePath varchar(255)
+);
+
