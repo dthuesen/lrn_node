@@ -1,0 +1,10 @@
+html
+	head
+		title= title
+	body
+		h1= message
+		div(class="important-message", id="message-container")
+			ul
+				- for (var i = 1; i <= 5; i++) {
+					li= i + ". Item " + i
+				- }

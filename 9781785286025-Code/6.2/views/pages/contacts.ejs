@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>        
+        <title>My Contacts</title>            
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        
+        <link rel="stylesheet" href="/public/assets/css/bootstrap.css">
+        <link rel="stylesheet" href="/public/assets/css/font-awesome.css">
+
+        <link rel="stylesheet" href="/public/assets/css/contacts.css">
+    </head>
+    <body>
+        <div class="container">
+
+            <div class="page-title">
+                <h2><span class="fa fa-users"></span> My Contacts <small>2 contacts</small></h2>
+            </div>
+
+            <div class="row">
+                <div class="panel panel-default">
+                    <div class="profile-card">
+                        <p>Support search by: name</p>
+                        <form class="form-horizontal">
+                            <div class="form-group">
+                                <div class="col-md-8">
+                                    <div class="input-group">
+                                        <div class="input-group-addon">
+                                            <span class="fa fa-search"></span>
+                                        </div>
+                                        <input id="search" type="text" class="form-control" placeholder="Who are you looking for?"/>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <a href="/profile" id="addContact" class="btn btn-success btn-block"><span class="fa fa-plus"></span> Add new contact</a>
+                                </div>
+                            </div>
+                        </form>                                    
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-3 contact-card">
+                    <div class="panel panel-default">
+                        <div class="panel-body profile">
+                            <div class="profile-image">
+                                <img src="/public/assets/images/no-image.png" alt="John Doe"/>
+                            </div>
+                            <div class="profile-data">
+                                <div class="profile-data-name">John Doe</div>
+                            </div>
+                            <div class="profile-controls">
+                                <a href="#" class="profile-control-left"><span class="fa fa-pencil-square-o"></span></a>
+                                <a href="#" class="profile-control-right confirm-delete"><span class="fa fa-times"></span></a>
+                            </div>
+                        </div>                                
+                        <div class="profile-card">                                    
+                            <div class="contact-info">
+                                <p><small>Phone</small><br/>111222333</p>
+                                <p><small>Email</small><br/>john.doe@domain.com</p>
+                            </div>
+                        </div>                                
+                    </div>
+                </div>
+
+                <div class="col-md-3 contact-card">
+                    <div class="panel panel-default">
+                        <div class="panel-body profile">
+                            <div class="profile-image">
+                                <img src="/public/assets/images/no-image.png" alt="Taylor Swift"/>
+                            </div>
+                            <div class="profile-data">
+                                <div class="profile-data-name">Taylor Swift</div>
+                            </div>
+                            <div class="profile-controls">
+                                <a href="#" class="profile-control-left"><span class="fa fa-pencil-square-o"></span></a>
+                                <a href="#" class="profile-control-right confirm-delete"><span class="fa fa-times"></span></a>
+                            </div>
+                        </div>                                
+                        <div class="profile-card">                                    
+                            <div class="contact-info">
+                                <p><small>Phone</small><br/>222333444</p>
+                                <p><small>Email</small><br/>taylor.swift@domain.com</p>
+                            </div>
+                        </div>                                
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script type="text/javascript" src="/public/assets/js/jquery.js"></script>
+        <script type="text/javascript" src="/public/assets/js/bootstrap.js"></script>
+
+    </body>
+</html>

@@ -1,0 +1,9 @@
+curl -i -X POST -H 'Content-Type:application/json' http://localhost:3000/v1/contact -d '{"firstName":"Lady","lastName":"Gaga","email":"lady.gaga@domain.com","phone":"111444"}'
+
+curl http://localhost:3000/v1/contact
+
+curl -i -X PUT -H 'Content-Type:application/json' http://localhost:3000/v1/contact/2 -d '{"contactId":2, "firstName":"Lady","lastName":"Gaga","email":"lady.gaga@domain.com","phone":"444111"}'
+
+curl http://localhost:3000/v1/contact/2
+
+curl -i -X DELETE http://localhost:3000/v1/contact/2

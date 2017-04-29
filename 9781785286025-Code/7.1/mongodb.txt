@@ -1,0 +1,11 @@
+use packtdb
+
+db.createCollection('contactPerson')
+
+db.contactPerson.find({})
+
+db.contactPerson.insert({contactId: 1, firstName: 'John', lastName: 'Doe', email: 'john.doe@domain.com', phone: '987654'})
+
+db.contactPerson.remove({contactId: 1})
+
+db.contactPerson.find({})

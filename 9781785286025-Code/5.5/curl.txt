@@ -1,0 +1,13 @@
+curl http://localhost:8000/v1/contact
+
+curl http://localhost:8000/v1/contact/1
+
+curl http://localhost:8000/v1/contact/1 | python -m json.tool
+
+curl -i -X POST -H 'Content-Type:application/json' http://localhost:8000/v1/contact -d '{"contactId":3,"firstName":"Lady","lastName":"Gaga","email":"lady.gaga@domain.com","phone":"111444"}'
+
+curl -i -X PUT -H 'Content-Type:application/json' http://localhost:8000/v1/contact/3 -d '{"contactId":3,"firstName":"Lady","lastName":"Gaga","email":"lady.gaga@domain.com","phone":"444111"}'
+
+curl -i -X DELETE http://localhost:8000/v1/contact/3
+
+curl -v http://localhost:8000/v1/contact | python -m json.tool
