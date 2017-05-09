@@ -111,7 +111,7 @@ ContactsMongo.prototype.save = function(contact, callback) {
 		let id = parseInt(contact.contactId);
 
 		contactPerson.update(
-      {contactIde: id},
+      {contactId: id},
       {$set: contact},
 			function(err) {
 				if (err) {
@@ -132,7 +132,7 @@ ContactsMongo.prototype.delete = function(contactId, callback) {
     let id = parseInt(contact.contactId);
     
 		contactPerson.remove(
-			{contactIde: id},
+			{contactId: id},
 			function(err, rows) {
 				if (err) {
 					console.log(JSON.stringify(err));
